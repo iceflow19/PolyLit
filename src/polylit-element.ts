@@ -1,6 +1,6 @@
 import { LitElement } from '@polymer/lit-element';
-import { Observable } from './lib/observerable';
-import { Emittable } from './lib/emittable';
-import { Bindable } from './lib/bindable';
+import { ObservableMixin } from './lib/observerable';
+import { EmittableMixin } from './lib/emittable';
+import { BindableMixin } from './lib/bindable';
 
-export class PolyLitElement extends Bindable(Emittable(Observable(LitElement))) {}
+export class PolyLitElement extends BindableMixin(EmittableMixin(ObservableMixin(LitElement))) {}
